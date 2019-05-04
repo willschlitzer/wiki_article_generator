@@ -105,4 +105,6 @@ venv.bak/
 
 # personal adds
 .idea/
-
+state_politician_article_generator/page.txt
+state_politician_article_generator/talk.txt
+book_article_generator/page.txt
