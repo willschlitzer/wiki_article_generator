@@ -15,6 +15,7 @@ spouse = ""
 residence = "Acton"
 date_accesssed = "May 3, 2019"
 male = False
+official_portrait = True
 committee_list = [
     "Joint Committee on Children, Families and Persons with Disabilities",
     "Joint Committee on Consumer Protection and Professional Licensure",
@@ -328,3 +329,15 @@ talk_text = (
 )
 with open("talk.txt", "w") as file:
     file.write(talk_text)
+
+if official_portrait:
+    file_name = ''
+    file_name += politician_first + '_' + politcian_last + "_official_portrait.jpg"
+    file_caption = politician_first + " " + politcian_last + "'s official portrait from the " + office + "."
+    pic_info = "filename\r\r"
+    pic_info += file_name
+    pic_info += "\r\r"
+    pic_info += "caption\r\r"
+    pic_info += file_caption
+    with open("pic_info.txt", "w") as file:
+        file.write(pic_info)
