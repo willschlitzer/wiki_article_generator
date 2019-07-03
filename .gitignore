@@ -108,6 +108,14 @@ venv.bak/
 state_politician_article_generator/page.txt
 state_politician_article_generator/talk.txt
 book_article_generator/page.txt
-state_politician_article_generator/pic_info.txt
-state_politician_article_generator/page.txt
+/state_politician_article_generator/pic_info.txt
+/state_politician_article_generator/page.txt
 
+./page.txt
+./talk.txt
+/page.txt
+/talk.txt
+page.txt
+talk.txt
+*/talk.txt
+*/page.txt
