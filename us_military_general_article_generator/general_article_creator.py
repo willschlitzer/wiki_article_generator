@@ -1,22 +1,13 @@
 gen_last = "Gouveia"
-first_first = "Tami"
+gen_first = "Tami"
 service = "Air Force
 term_start = "2019"
 successor = ""
 predecessor = ""
-alma_mater = "[[Mount Holyoke College]]"
-spouse = ""
-residence = "Acton"
+alma_mater = ""
 date_accesssed = "May 3, 2019"
 male = False
-committee_list = [
-    "Joint Committee on Children, Families and Persons with Disabilities",
-    "Joint Committee on Consumer Protection and Professional Licensure",
-    "Joint Committee on Export Development"
-    "Joint Committee on Mental Health, Substance Use and Recovery",
 
-
-]
 
 
 def get_pronouns(male):
@@ -26,41 +17,16 @@ def get_pronouns(male):
         return "she", "her"
 
 
-def gen_office(state, state_senator):
-    if state_senator:
-        return (
-            state + " Senate",
-            "[[" + state + " Senate]]",
-            "State Senator",
-            "[[State Senator]]",
-        )
-    else:
-        return (
-            state + " House of Representatives",
-            "[[" + state + " House of Representatives]]",
-            "State Representative",
-            "[[State Representative]]",
-        )
-
-
-residence_link = "[[" + residence + ", " + state + "|" + residence + "]]"
 if alma_mater:
     alma_mater_link = "[[" + alma_mater + "]]"
 else:
     alma_mater_link = ""
-full_name = politician_first + " " + politcian_last
+full_name = gen_first + " " + politcian_last
 bold_full_name = "'''" + full_name + "'''"
 pronoun, pos_pronoun = get_pronouns(male)
-town_string, town_plural = gen_town_string(town_list, state)
-party, party_link = gen_party(democrat)
 
-district = district_no + " " + district_name + " District"
-district_link = "[[" + district + "]]"
-office, office_link, title, title_link = gen_office(state, state_senator)
-short_desc = "{{short description|" + state + " politician}}\r"
-template = "\r{{" + office + "|state=collapsed}}\r"
-committee_string = gen_committee_string(committee_list)
-infobox_name = "|name = " + politician_first + " " + politcian_last + "\r"
+short_desc = "{{short description| United States Air Force" + rank "}}\r"
+infobox_name = "|name = " + gen_first + " " + politcian_last + "\r"
 infobox_office = (
     "|office = " + "Member of the " + office_link + " from the " + district + "\r"
 )
@@ -72,7 +38,7 @@ infobox_alma_mater = "|alma_mater = " + alma_mater_link + "\r"
 infobox_successor = "|successor = " + successor + "\r"
 infobox_predecessor = "|predecessor = " + predecessor + "\r"
 
-pol_infobox = (
+gen_infobox = (
     "{{Politician infobox"
     + infobox_name
     + infobox_office
@@ -96,10 +62,7 @@ main_text = (
     + ". "
 )
 
-main_text += (
-    pronoun.title() + " represents the " + town_plural + " of " + town_string + ". "
-)
-main_text += politcian_last + " serves on " + committee_string + "."
+
 
 
 def gen_cat_string(state, party, office, residence, alma_mater):
@@ -253,7 +216,7 @@ ref4_citation = create_web_citation(
 )
 ref4_citation = ""
 
-page_text = short_desc + pol_infobox + main_text
+page_text = short_desc + gen_infobox + main_text
 if ref1_citation:
     page_text += ref1_citation
 if ref2_citation:
@@ -265,7 +228,7 @@ if ref4_citation:
 
 page_text += "\r==References==\r{{reflist}}"
 page_text += template
-page_text += "\r{{DEFAULTSORT: " + politcian_last + ", " + politician_first + "}}\r"
+page_text += "\r{{DEFAULTSORT: " + politcian_last + ", " + gen_first + "}}\r"
 page_text += cat_string
 # For Massachusetts use only
 page_text += "\r{{Massachusetts-MARepresentative-stub}}"
@@ -276,7 +239,7 @@ talk_text = (
     "{{talkheader|search=yes}}\r{{WikiProject Biography|living=yes|class=stub|auto=yes|listas="
     + politcian_last
     + ", "
-    + politician_first
+    + gen_first
     + "}}\r{{WikiProject United States|class=Stub|importance=Low|"
     + state_abbrev
     + "=Yes|"
