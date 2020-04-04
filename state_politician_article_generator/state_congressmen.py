@@ -17,15 +17,13 @@ residence = ""
 date_accesssed = "June 29, 2019"
 male = True
 official_portrait = True
-committee_in_name=False
+committee_in_name = False
 committee_list = [
     "Administrative Rules",
     "A&B Public Safety",
     "Judiciary",
     "Public Safety",
 ]
-
-
 
 
 def get_pronouns(male):
@@ -89,6 +87,7 @@ def gen_office(state, state_senator):
             "[[State Representative]]",
         )
 
+
 if residence:
     residence_link = "[[" + residence + ", " + state + "|" + residence + "]]"
 else:
@@ -129,7 +128,7 @@ if official_portrait:
     pic_info += "\r\r"
     pic_info += "caption\r\r"
     pic_info += file_caption
-    #following is for Oklahoma congressmen
+    # following is for Oklahoma congressmen
     pic_info += "author\r\rOklahoma Legislative Service Bureau"
     pic_info += "template\r\r{{PD-OK-LSBPD}}"
     with open("pic_info.txt", "w") as file:
@@ -278,7 +277,9 @@ ref2_first = "Jamison"
 ref2_title = "Jim Olsen running for State House District 2"
 ref2_work = ""
 ref2_publisher = "Muskogee Politico"
-ref2_url = "https://www.muskogeepolitico.com/2018/04/jim-olsen-running-for-state-house.html"
+ref2_url = (
+    "https://www.muskogeepolitico.com/2018/04/jim-olsen-running-for-state-house.html"
+)
 ref2_date = "April 25, 2018"
 ref2_citation = create_web_citation(
     name=ref2_name,
@@ -373,7 +374,7 @@ page_text += template
 page_text += "\r{{DEFAULTSORT: " + politcian_last + ", " + politician_first + "}}\r"
 page_text += cat_string
 # For Massachusetts use only
-#page_text += "\r{{Massachusetts-MARepresentative-stub}}"
+# page_text += "\r{{Massachusetts-MARepresentative-stub}}"
 with open("page.txt", "w") as file:
     file.write(page_text)
 
@@ -383,14 +384,13 @@ talk_text = (
     + ", "
     + politician_first
     + "}}\r{{WikiProject United States|class=Stub|importance=Low}}\r"
-# Used only if state has a WikiProject under WP United States
-#    + "}}\r{{WikiProject United States|class=Stub|importance=Low|"
-#    + state_abbrev
-#    + "=Yes|"
-#    + state_abbrev
-#    + "-importance=Low}}\r"
+    # Used only if state has a WikiProject under WP United States
+    #    + "}}\r{{WikiProject United States|class=Stub|importance=Low|"
+    #    + state_abbrev
+    #    + "=Yes|"
+    #    + state_abbrev
+    #    + "-importance=Low}}\r"
     + "{{User:MiszaBot/config | algo = old(30d) | archive = {{SUBST:FULLPAGENAME}}/Archive %(counter)d | counter = 1 | maxarchivesize = 150K | archiveheader = {{Automatic archive navigator}} | minthreadstoarchive = 1 | minthreadsleft = 4 }}"
 )
 with open("talk.txt", "w") as file:
     file.write(talk_text)
-
