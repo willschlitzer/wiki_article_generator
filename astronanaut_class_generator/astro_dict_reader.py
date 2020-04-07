@@ -5,7 +5,8 @@ def astro_dict_reader(astro_dict):
     astro_keys.sort()
     name_rating_alpha = []
     for key in astro_keys:
-        rating_num = astro_dict[key]
+        name = astro_dict[key][0]
+        rating_num = astro_dict[key][1]
         if rating_num == 0:
             rating = "stub"
         elif rating_num == 1:
@@ -20,6 +21,18 @@ def astro_dict_reader(astro_dict):
             rating = "A"
         elif rating_num == 6:
             rating = "FA"
-        astro_tuple = (key, rating)
+        astro_tuple = (name, rating)
         name_rating_alpha.append(astro_tuple)
     return name_rating_alpha
+
+def astro_dict_builder(astro_list):
+    """Takes a list of astronaut names, the article rating, and weather or not to use the middle name, and returns a dictionary of the last name keys"""
+    astro_dict = {}
+    for astronaut in astro_list:
+        if astronaut[2] == True:
+            astro_key = astronaut[0].split()[2]
+        else:
+            astro_key = astronaut[0].split()[1]
+        astro_dict[astro_key] = astronaut[0:2]
+    return astro_dict
+
