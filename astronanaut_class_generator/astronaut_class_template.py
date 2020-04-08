@@ -1,5 +1,5 @@
 from astro_dict_reader import astro_dict_reader, astro_dict_builder
-from class1994 import astro_list, astronaut_class, image_name
+from class1996 import astro_list, astronaut_class, image_name
 
 
 astro_info = ""
