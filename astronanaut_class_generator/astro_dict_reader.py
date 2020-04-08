@@ -33,6 +33,11 @@ def astro_dict_builder(astro_list):
             astro_key = astronaut[0].split()[2]
         else:
             astro_key = astronaut[0].split()[1]
-        astro_dict[astro_key] = astronaut[0:2]
+        if astro_key not in astro_dict.keys():
+            astro_dict[astro_key] = astronaut[0:2]
+        else:
+            first = astronaut[0].split()[0]
+            astro_key += ", " + first
+            astro_dict[astro_key] = astronaut[0:2]
     return astro_dict
 
