@@ -14,7 +14,7 @@ name_string = "|".join(wiki_names)
 final_string = pretext + name_string + posttext
 if (text[:3] == "[[[") or (text[0:2] != "[[") or (text[-3:] == "]]]") or (text[-2:] != "]]"):
     print("Check punctuation at the beginning/end")
-    pyperclip.copy("bad copy/paste")
+    pyperclip.copy(text)
 else:
     print(final_string)
     print()
