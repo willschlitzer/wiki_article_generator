@@ -8,6 +8,7 @@ gen_full_name = gen_first + " " + gen_last
 gen_image = ""
 service = " United States Air Force"
 rank = 9
+rank_info = Rank(rank=rank)
 service_years = "2019"
 successor = ""
 predecessor = ""
@@ -28,34 +29,39 @@ def gen_cat_string(alma_mater):
     if alma_mater:
         cat_list.append(alma_mater + " alumni")
     for cat in cat_list:
-        cat_string += "[[Category:" + cat + "]]\r"
+        cat_string += "[[Category:" + cat + "]]\n"
     return cat_string
 
 
-cat_string = gen_cat_string(state, party, office, residence, alma_mater)
+cat_string = gen_cat_string(alma_mater)
 
 
 
-page_text += "\r==References==\r{{reflist}}"
-page_text += template
-page_text += "\r{{DEFAULTSORT: " + politcian_last + ", " + gen_first + "}}\r"
+page_text += "\n==References==\n{{reflist}}"
+#page_text += template
+page_text == "\n{{authority control}}"
+page_text += "\n{{DEFAULTSORT: " + gen_last + ", " + gen_first + "}}\n"
 page_text += cat_string
-# For Massachusetts use only
-page_text += "\r{{Massachusetts-MARepresentative-stub}}"
 with open("page.txt", "w") as file:
     file.write(page_text)
 
 talk_text = (
     "{{talkheader|search=yes}}\r{{WikiProject Biography|living=yes|class=stub|auto=yes|listas="
-    + politcian_last
+    + gen_last
     + ", "
     + gen_first
-    + "}}\r{{WikiProject United States|class=Stub|importance=Low|"
-    + state_abbrev
-    + "=Yes|"
-    + state_abbrev
-    + "-importance=Low}}\r"
-    + "{{User:MiszaBot/config | algo = old(30d) | archive = {{SUBST:FULLPAGENAME}}/Archive %(counter)d | counter = 1 | maxarchivesize = 150K | archiveheader = {{Automatic archive navigator}} | minthreadstoarchive = 1 | minthreadsleft = 4 }}"
+    + "|military-work-group=y|military-priority=}}"
+      "\n{{WikiProject Military history|class=stub"
+      "\n<!-- B-Class 5-criteria checklist -->"
+      "\n|b1 <!-- Referencing and citations --> ="
+      "\n|b2 <!-- Coverage and accuracy --> ="
+      "\n|b3 <!-- Structure --> ="
+      "\n|b4 <!-- Grammar and style --> ="
+      "\n|b5 <!-- Supporting materials --> ="
+      "\n|Aviation=n|Biography=y|US=y|Cold-War=|Post-Cold-War=}}"
+      "\n{{WikiProject United States|class=stub|importance=|USMIL=y}}"
+      "\n}}
+    + "\n{{User:MiszaBot/config | algo = old(30d) | archive = {{SUBST:FULLPAGENAME}}/Archive %(counter)d | counter = 1 | maxarchivesize = 150K | archiveheader = {{Automatic archive navigator}} | minthreadstoarchive = 1 | minthreadsleft = 4 }}"
 )
 with open("talk.txt", "w") as file:
-file.write(talk_text)
+    file.write(talk_text)
