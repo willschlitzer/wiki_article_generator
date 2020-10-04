@@ -1,6 +1,7 @@
 import DOR_list_retriever
 from web_citation_creator import WebCitation
 import page_text_creator
+import talk_page_creator
 
 gen_last = "Gouveia"
 gen_first = "Tami"
@@ -16,16 +17,16 @@ current_command = ""
 commands_held = ""
 date_accesssed = "May 3, 2019"
 alma_mater = "United States Air Force Academy"
-#alma_mater = "United States Air Force Academy"
+# alma_mater = "United States Air Force Academy"
 male = False
-
-
-
 
 
 def gen_cat_string(alma_mater):
     cat_string = ""
-    cat_list = ["Living people","United States Air Force generals",]
+    cat_list = [
+        "Living people",
+        "United States Air Force generals",
+    ]
     if alma_mater:
         cat_list.append(alma_mater + " alumni")
     for cat in cat_list:
@@ -36,32 +37,10 @@ def gen_cat_string(alma_mater):
 cat_string = gen_cat_string(alma_mater)
 
 
-
 page_text += "\n==References==\n{{reflist}}"
-#page_text += template
+# page_text += template
 page_text == "\n{{authority control}}"
 page_text += "\n{{DEFAULTSORT: " + gen_last + ", " + gen_first + "}}\n"
 page_text += cat_string
 with open("page.txt", "w") as file:
     file.write(page_text)
-
-talk_text = (
-    "{{talkheader|search=yes}}\r{{WikiProject Biography|living=yes|class=stub|auto=yes|listas="
-    + gen_last
-    + ", "
-    + gen_first
-    + "|military-work-group=y|military-priority=}}"
-      "\n{{WikiProject Military history|class=stub"
-      "\n<!-- B-Class 5-criteria checklist -->"
-      "\n|b1 <!-- Referencing and citations --> ="
-      "\n|b2 <!-- Coverage and accuracy --> ="
-      "\n|b3 <!-- Structure --> ="
-      "\n|b4 <!-- Grammar and style --> ="
-      "\n|b5 <!-- Supporting materials --> ="
-      "\n|Aviation=n|Biography=y|US=y|Cold-War=|Post-Cold-War=}}"
-      "\n{{WikiProject United States|class=stub|importance=|USMIL=y}}"
-      "\n}}
-    + "\n{{User:MiszaBot/config | algo = old(30d) | archive = {{SUBST:FULLPAGENAME}}/Archive %(counter)d | counter = 1 | maxarchivesize = 150K | archiveheader = {{Automatic archive navigator}} | minthreadstoarchive = 1 | minthreadsleft = 4 }}"
-)
-with open("talk.txt", "w") as file:
-    file.write(talk_text)

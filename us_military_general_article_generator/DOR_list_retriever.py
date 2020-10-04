@@ -24,5 +24,6 @@ def remove_ranks(raw_list):
         date_list.append(date_rank.replace(ranks[i], ""))
     return date_list
 
+
 if __name__ == "__main__":
     main()
