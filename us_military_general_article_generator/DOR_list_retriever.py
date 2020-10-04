@@ -1,9 +1,15 @@
-def main():
+def template_return(template_start):
     file = "DOR_list.txt"
     with open(file, "r") as f:
         raw_list = f.read().split("\n")
     date_list = remove_ranks(raw_list)
-    return date_list
+    #return date_list
+    template = template_start
+    for date in date_list:
+        template += "|"
+        template += date
+    template += "}}"
+    return template
 
 
 def remove_ranks(raw_list):
