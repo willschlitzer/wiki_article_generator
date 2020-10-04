@@ -1,10 +1,14 @@
+import DOR_list_retriever
 from web_citation_creator import WebCitation
+import page_text_creator
 
 gen_last = "Gouveia"
 gen_first = "Tami"
+gen_full_name = gen_first + " " + gen_last
+gen_image = ""
 service = " United States Air Force"
 rank = 9
-years_of_service = "2019"
+service_years = "2019"
 successor = ""
 predecessor = ""
 current_command = ""
@@ -12,18 +16,17 @@ commands_held = ""
 date_accesssed = "May 3, 2019"
 alma_mater = "United States Air Force Academy"
 #alma_mater = "United States Air Force Academy"
+male = False
 
 
 
 
 
-def gen_cat_string(state, party, office, residence, alma_mater):
+def gen_cat_string(alma_mater):
     cat_string = ""
     cat_list = ["Living people","United States Air Force generals",]
     if alma_mater:
         cat_list.append(alma_mater + " alumni")
-    if residence:
-        cat_list.append("People from " + residence + ", " + state)
     for cat in cat_list:
         cat_string += "[[Category:" + cat + "]]\r"
     return cat_string
@@ -32,15 +35,6 @@ def gen_cat_string(state, party, office, residence, alma_mater):
 cat_string = gen_cat_string(state, party, office, residence, alma_mater)
 
 
-page_text = short_desc + gen_infobox + main_text
-if ref1_citation:
-    page_text += ref1_citation
-if ref2_citation:
-    page_text += ref2_citation
-if ref3_citation:
-    page_text += ref3_citation
-if ref4_citation:
-    page_text += ref4_citation
 
 page_text += "\r==References==\r{{reflist}}"
 page_text += template

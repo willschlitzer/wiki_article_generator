@@ -14,3 +14,4 @@ class WebCitation():
     def create_citation(self):
         cite_info = str(self.title + self.author_last + self.author_first + self.work + self.publisher + self.date + self.url + self.date_accessed)
         self.citation = "<ref name=" + self.ref_name + ">{{cite web" + cite_info.replace("  ", " ") + "}}</ref>"
+        self.named_citation = "<ref name=" + self.ref_name + "/>"
