@@ -1,4 +1,4 @@
-def main(gen_last, gen_first):
+def talk_page(gen_last, gen_first):
     talk_text = (
             "{{talkheader|search=yes}}\r{{WikiProject Biography|living=yes|class=stub|auto=yes|listas="
             + gen_last
