@@ -22,10 +22,25 @@ class Rank():
             self.rank_link = "[[Brigadier general (United States)|Brigadier General]]"
 
 
-def gen_infobox(name, image="", allegiance="USA", branch="air force"):
+def gen_infobox(name, image="", allegiance="USA", branch="air force", service_years="", rank_insignia="", rank_link="", current_command="", commands_held = "", awards=""):
     info_text = "{{Infobox military person"
-    info_text += ("\n|name = " + name)
+    info_text += ("\n|name         =" + name)
+    info_text += ("\n|image        = " + image)
+    info_text += "\n|birth_date   = \n|birth_place  =\n|death_date   = \n|death_place  = "
+    info_text += ("\n|allegiance   = {{" + allegiance + "}}")
+    info_text += ("\n|branch       = {{" + branch + "|" + allegiance + "}}")
+    info_text += ("\n|serviceyears = " + service_years)
+    info_text += ("\n|rank         = " + rank_insignia + " " + rank_link)
+    commands = current_command
+    for i in commands_held:
+        if commands:
+            commands += "|"
+        commands += i
+    info_text += ("\n|commands     ={{Unbulleted list|" + commands + "}}")
+    info_text += ("\n|awards       =" + awards)
+    info_text += "\n}}"
     return info_text
+
 
 
 def get_pronouns(male):
